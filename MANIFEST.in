@@ -1,0 +1,8 @@
+include *.rst
+include LICENSE
+recursive-include demo_extension *.html
+recursive-include demo_extension *.txt
+recursive-include demo_extension *.po
+global-exclude __pycache__
+global-exclude *.py[co]
+
