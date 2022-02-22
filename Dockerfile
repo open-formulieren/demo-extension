@@ -9,7 +9,7 @@ RUN pip install .
 
 
 # Stage 2 - Build the production image with the demo extension
-FROM openformulieren/open-forms:1.0.0-rc.3 AS production-build
+FROM openformulieren/open-forms:test_demo_extension AS production-build
 
 WORKDIR /app
 
