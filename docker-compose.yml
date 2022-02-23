@@ -29,7 +29,7 @@ services:
       args:
         RELEASE: ${TAG:-latest}
         SDK_RELEASE: ${SDK_TAG:-latest}
-    image: demo-extension:6
+    image: demo-extension:latest
     environment: &web_env
       - DJANGO_SETTINGS_MODULE=openforms.conf.docker
       - SECRET_KEY=${SECRET_KEY:-@r0w-0(&apjfde5fl6h23!vn)r1ldkp1c_d2#!$$did4z5hun4a}
@@ -74,7 +74,7 @@ services:
 
   celery:
     build: *web_build
-    image: demo-extension:6
+    image: demo-extension:latest
     environment: *web_env
     command: /celery_worker.sh
     depends_on:
@@ -83,7 +83,7 @@ services:
 
   celery-beat:
     build: *web_build
-    image: demo-extension:6
+    image: demo-extension:latest
     environment: *web_env
     command: /celery_beat.sh
     depends_on:
@@ -92,7 +92,7 @@ services:
 
   celery-flower:
     build: *web_build
-    image: demo-extension:6
+    image: demo-extension:latest
     environment: *web_env
     command: /celery_flower.sh
     ports:

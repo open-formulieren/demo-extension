@@ -20,11 +20,3 @@ COPY --from=demo-extension-build /usr/local/lib/python3.8 /usr/local/lib/python3
 COPY --chown=maykin:root ./demo_extension /app/src/demo_extension
 
 USER maykin
-
-
-
-
-
-
-
-
