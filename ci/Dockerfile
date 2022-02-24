@@ -9,9 +9,11 @@ RUN pip install -e .
 
 
 # Stage 2 - Build the production image with the demo extension
-FROM open-formulieren/open-forms:latest-test AS test-build
+FROM open-formulieren/open-forms:test AS test-build
 
 WORKDIR /app
+
+COPY ./bin/docker_test.sh /test.sh
 
 # Copy the dependencies of the demo-extension
 COPY --from=demo-extension-build-test /usr/local/lib/python3.8 /usr/local/lib/python3.8
