@@ -1,0 +1,16 @@
+Dockerfile*
+docker-compose*
+.dockerignore
+.git
+.github
+.vscode
+.idea/
+env/
+/doc/_build/
+/testapp/
+/tests/
+
+/htmlcov
+.coverage
+
+/ci/
