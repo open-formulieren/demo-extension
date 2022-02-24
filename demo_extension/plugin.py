@@ -14,6 +14,10 @@ if TYPE_CHECKING:
     from openforms.submissions.models import Submission
 
 
+def test_function(solo_config, env_var_config, form_config):
+    pass
+
+
 @register("demo_extension")
 class DemoRegistration(BasePlugin):
     verbose_name = _("Demo Extension - print to console")
@@ -35,6 +39,8 @@ class DemoRegistration(BasePlugin):
         demo_env_var = config("DEMO_ENV_VAR", "")
         if demo_env_var:
             print(f"Demo environment variable: {demo_env_var}")
+
+        test_function(demo_config.demo_field, options.get("demo_option"), demo_env_var)
 
     def get_reference_from_result(self, result: None) -> None:
         raise NoSubmissionReference("Demo plugin does not emit a reference")
