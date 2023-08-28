@@ -1,0 +1,3 @@
+[submodule "open-forms"]
+	path = open-forms
+	url = https://github.com/open-formulieren/open-forms.git
