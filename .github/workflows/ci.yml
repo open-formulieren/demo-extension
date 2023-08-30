@@ -51,9 +51,8 @@ jobs:
           working-directory: open-forms
 
       - name: Run tests
+        # Both the dir containing manage.py and the working directory are added to the path automatically
         run: |
-          export PYTHON_PATH=$PYTHON_PATH:`pwd`/open-forms
-
           python open-forms/src/manage.py compilemessages
           coverage run --source=demo_extension open-forms/src/manage.py test demo_extension
           coverage xml -o coverage-extension.xml
